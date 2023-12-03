@@ -1,3 +1,4 @@
+/* TODO: можно звездочкой, не перечисляя, а лучше подключить bootstrap */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -18,55 +19,60 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 html {
     height: 100%;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-
 .window {
     border-radius: 10%;
+    /* TODO: можно сделать одним margin: 300px auto 50px; */
     margin: 50px auto;
     margin-top: 300px;
     width: 250px;
     height: 230px;
     background-color: aquamarine;
-
-
 }
 
-.windowReg {
+.window-reg {
     border-radius: 10%;
+    /* TODO: можно сделать одним margin: 300px auto 50px; */
     margin: 50px auto;
     margin-top: 300px;
     width: 250px;
     height: 250px;
     background-color: aquamarine;
-
-
 }
 
+/* TODO: screen-pass */
 .screenpass {
     margin-left: 20px;
     display: block;
@@ -74,16 +80,16 @@ table {
     margin-right: auto;
 }
 
-
-.autoriz{
+/* TODO: auth */
+.autoriz {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 27px;
     margin-bottom: 20px;
 }
 
-.TextScreenpass{
-
+/* TODO: text-screen-pass, классы не именуются с большой буквы */
+.TextScreenpass {
     text-align: center;
 }
 
@@ -94,7 +100,8 @@ textarea {
     margin-right: auto;
 }
 
-.buttonReg {
+/* TODO: button-reg */
+.buttonReg, .authButton {
     cursor: pointer;
     border-radius: 10px;
     margin-top: 10px;
@@ -102,34 +109,18 @@ textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
-   background-color: rgb(63, 18, 167);
-   color: #ffffff;
-   width: 150px;
-   height: 20px;
-
-}
-
-.buttonReg1 {
-    cursor: pointer;
-    border-radius: 10px;
-    margin-top: 10px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-   background-color: rgb(63, 18, 167);
-   color: #ffffff;
-   width: 150px;
-   height: 20px;
-
+    background-color: rgb(63, 18, 167);
+    color: #ffffff;
+    width: 150px;
+    height: 20px;
 }
 
 .buttonReg:hover {
-    filter:brightness(80%) ;
-};
+    filter: brightness(80%);
+}
 
 .buttonReg:active {
-    filter:brightness(120%) ;
-};
+    filter: brightness(120%);
+}
 
 
