@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +8,26 @@
 </head>
 <body>
 
-    <div class="window">
+<div class="window">
 
-        <div class="autoriz">Вход</div>
-        
-        <div class="screenpass">
-            <div class="TextScreenpass">Логин</div>
-            <textarea class="Login1" ></textarea>
-            <div class="TextScreenpass">Пароль</div>
-            <textarea class="Pass1" ></textarea>
-            <div class="buttonReg1"  >Вход</div>
-            <div onclick="document.location='Регистрация.html'" class="buttonReg" >Зарегестироваться</div>
-        </div>
-        
+    <div class="authorization">Вход</div>
+
+    <div class="screen-authoriz">
+
+        <div class="text-screen">Логин</div>
+
+        <input class="login-auth"></input>
+
+        <div class="text-screen">Пароль</div>
+
+        <input type="password"  class="pass-auth"></input>
+
+        <a class="auth-button">Вход</a>
+        <!-- TODO: Переходы сделать через ссылку стилизованную под кнопку-->
+        <a href="Регистрация.html" class="button-registration">Зарегестироваться</a>
     </div>
 
-
-    <script >
-
-        const btnIn = document.querySelector('.buttonReg1');
-        let Login1 = document.querySelector('.Login1');
-        let Pass1 = document.querySelector('.Pass1');
-
-        btnIn.addEventListener('click', () => {
-
-
-            let x = JSON.parse( localStorage.getItem('user'));
-            console.log(x);
-            console.log(x.User0.Login);
-            console.log(x.User0.Pass);
-
-            
-                if (Login1.value == x.User0.Login && Pass1.value == x.User0.Pass)
-                {
-                     document.location='ГлавнаяСтраница.html';
-                }
-                else{
-                    alert("Неверный логин или пароль");
-                } 
-           
-
-})
-    </script>
+</div>
+<script src="js.js"></script>
 </body>
 </html>
