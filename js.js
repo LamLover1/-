@@ -1,55 +1,65 @@
 //Регистрация
 
-let Name = document.querySelector('#Name')
-let Login = document.querySelector('#Login');
-let Pass = document.querySelector('#Pass');
+let Name = document.querySelector('#name-rigstr')
+let Login = document.querySelector('#login-rigstr');
+let Pass = document.querySelector('#pass-rigstr');
 
-const regButton = document.getElementById('buttonReg');
-const authButton = document.querySelector('.authButton');
+const button_registration = document.querySelector('#button-registration');
+const auth_button = document.querySelector('.auth-button');
+const storag_user = JSON.parse(localStorage.getItem('user'));
 
-let users = {};
+let users = new Array();
 
 // TODO: это по сути делается классом, но и это здесь излишне, можно сделать просто
 // объект, где и хранить эти данные
-function User (Name, Login, Pass){
+class User {
+constructor(Name,Login,Pass){
+    
     this.Name = Name;
     this.Login = Login;
     this.Pass = Pass;
+    }
 }
 
 function ID(users) {
-    return Object.keys(users).length;
+    return users.length;
 }
 
-if (regButton) {
-    regButton.addEventListener('click', () => {
+if (button_registration) {
+    button_registration.addEventListener('click', () => {
         const NameUser = Name.value;
         const LoginUser = Login.value;
         const PassUser = Pass.value;
 
         const user = new User(NameUser, LoginUser, PassUser);
 
-        const UserID = 'User' + ID(users);
+        const UserID = 'user' + ID(users);
 
         users[UserID] = user;
 
-        let UserJSON = JSON.stringify(users);
+         users.push(user);
 
-        localStorage.setItem("user", UserJSON);
+         if(storag_user.find(item => item.Login == LoginUser ))
+         {
+            alert("Такой логин уже существует " + LoginUser)
+         }
+
+        localStorage.setItem('user', JSON.stringify(users));
     })
 }
 
-if (authButton) {
-    let Login1 = document.querySelector('.Login1');
-    let Pass1 = document.querySelector('.Pass1');
+if (auth_button) {
+    let login_auth = document.querySelector('.login-auth');
+    let pass_auth = document.querySelector('.pass-auth');
 
-    authButton.addEventListener('click', () => {
-        let x = JSON.parse(localStorage.getItem('user'));
+    auth_button.addEventListener('click', () => {
+       
         // Поразбираться с функциями с работой с массивами
         // https://learn.javascript.ru/array-methods
         // Конкретно здесь можно использовать find и хранить массив с объектами
-        if (Login1.value == x.User0.Login && Pass1.value == x.User0.Pass) {
-            document.location = 'ГлавнаяСтраница.html';
+
+        if (storag_user.find(item => item.Login == login_auth.value && storag_user.find(item => item.Pass == pass_auth.value))) {
+           location.href="ГлавнаяСтраница.html"
         } else {
             alert("Неверный логин или пароль");
         }
